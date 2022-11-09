@@ -1,4 +1,6 @@
 #include "types.h"
+#include <stdlib.h>
+#include <string.h>
 #define DELIM_DATA "/\n\0"
 
 struct tm stringToTime (char* line) {

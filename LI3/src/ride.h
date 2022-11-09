@@ -7,15 +7,15 @@ typedef struct ride* Ride;
 
 Ride parse_ride (char* line);
 
-int get_rideID (Ride r);
-struct tm get_rideDate (Ride r);
-int get_rideDriverID (Ride r);
-char* get_rideUser (Ride r);
-char* get_city (Ride r);
-int get_rideDist (Ride r);
-int get_scoreUser (Ride r);
-int get_scoreDriver (Ride r);
-double get_tip (Ride r);
-char* get_comment (Ride r);
+int ride_get_id (Ride r);
+struct tm ride_get_date (Ride r);
+int ride_get_driverID (Ride r);
+char* ride_get_rideUser (Ride r);
+char* ride_get_city (Ride r);
+int ride_get_dist (Ride r);
+int ride_get_scoreUser (Ride r);
+int ride_get_scoreDriver (Ride r);
+double ride_get_tip (Ride r);
+char* ride_get_comment (Ride r);
 
 #endif

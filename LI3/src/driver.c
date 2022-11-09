@@ -29,45 +29,45 @@ Driver parse_driver (char* line) {
     return d;
 }
 
-int get_Id (Driver d) {
+int driver_get_Id (Driver d) {
     int aux;
     aux = d->id;
     return aux;
 }
 
-char* get_name (Driver d) {
+char* driver_get_name (Driver d) {
     return (strdup(d->name));
 }
 
-struct tm get_birthDay (Driver d) {
+struct tm driver_get_birthDay (Driver d) {
     struct tm aux;
     aux = d->birth_day;
     return aux;
 }
 
-char* get_gender (Driver d) {
+char* driver_get_gender (Driver d) {
     return strdup(d->gender);
 }
 
-char* get_carClass (Driver d) {
+char* driver_get_carClass (Driver d) {
     return strdup(d->car_class);
 }
 
-char* get_licensePlate (Driver d) {
+char* driver_get_licensePlate (Driver d) {
     return strdup(d->license_plate);
 }
 
-char* get_city (Driver d) {
+char* driver_get_city (Driver d) {
     return strdup(d->city);
 }
 
-struct tm get_accountCreation (Driver d) {
+struct tm driver_get_accountCreation (Driver d) {
     struct tm aux;
     aux = d->account_creation;
     return aux;
 }
 
-char* get_accountStatus (Driver d) {
+char* driver_get_accountStatus (Driver d) {
     return strdup(d->account_status);
 }
 

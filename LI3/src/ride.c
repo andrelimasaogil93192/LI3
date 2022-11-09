@@ -31,57 +31,57 @@ Ride parse_ride (char* line) {
     
 }
 
-int get_RideID (Ride r) {
+int ride_get_id (Ride r) {
     int aux ;
     aux = r->ride_driver_id;
     return aux;
 }
 
-struct tm get_rideDate (Ride r) { 
+struct tm ride_get_date (Ride r) { 
     struct tm aux;
     aux = r->ride_date;
     return aux;
 }
 
-int get_rideDriverID (Ride r) {
+int ride_get_driverId (Ride r) {
     int aux;
     aux = r->ride_driver_id;
     return aux;
 }
 
-char* get_rideUser (Ride r) {
+char* ride_get_User (Ride r) {
     return strdup(r->ride_user);
 }
 
-char* get_city (Ride r) {
+char* ride_get_city (Ride r) {
     return strdup(r->city);
 } 
 
-int get_rideDist (Ride r) {
+int ride_get_Dist (Ride r) {
     int aux;
     aux = r->ride_distance;
     return aux;
 }
 
-int get_scoreUser (Ride r) {
+int ride_get_scoreUser (Ride r) {
     int aux;
     aux = r->score_user;
     return aux;
 }
 
-int get_scoreDriver (Ride r) {
+int ride_get_scoreDriver (Ride r) {
     int aux;
     aux = r->score_driver;
     return aux;
 }
 
-double get_tip (Ride r) {
+double ride_get_tip (Ride r) {
     double aux;
     aux = r->tip;
     return aux;
 } 
 
-char* get_comment (Ride r) {
+char* ride_get_comment (Ride r) {
     return strdup(r->comment);
 }
 

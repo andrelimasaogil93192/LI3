@@ -24,37 +24,44 @@ User parse_user (char* line) {
     u->account_status = strdup(strsep(&line,";"));
     return u;
 }
+
+User cloneUser (User u) {
+    User aux;
+    aux = malloc(sizeof(struct user));
+    memcpy(aux,u,sizeof(struct user));
+    return aux;
+}
    
 
-char* get_username (User u) {
+char* user_get_username (User u) {
     return (strdup(u->username));
 }
 
-char* get_name (User u) {
+char* user_get_name (User u) {
     return (strdup(u->name));
 }
 
-char* get_gender (User u) {
+char* user_get_gender (User u) {
     return (strdup(u->gender));
 }
 
-struct tm get_birthDate (User u) {
+struct tm user_get_birthDate (User u) {
     struct tm aux;
     aux = u->birth_date;
     return aux;
 }
 
-struct tm get_accountCreation (User u) {
+struct tm user_get_accountCreation (User u) {
     struct tm aux;
     aux = u->account_creation;
     return aux;
 }
 
-char* get_payMethod (User u) {
+char* user_get_payMethod (User u) {
     return (strdup(u->pay_method));
 }
 
-char* get_accountStatus (User u) {
+char* user_get_accountStatus (User u) {
     return (strdup(u->account_status));
 }
     
