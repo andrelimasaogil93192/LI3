@@ -24,17 +24,17 @@ void main(){
     FILE *drives_data = fopen("./drivers.csv","r"); 
     fgets(buffer_aux,1000,drives_data);
     while (fgets(buffer_aux,1000,drives_data)){
-        parse_rides(buffer_aux);
+        parse_driver(buffer_aux);
     }
     free (buffer_aux);
     fclose(drives_data);
 
     
-    char *buffer_rides = malloc(sizeof(char)* 10000);
+    char *buffer_aux = malloc(sizeof(char)* 10000);
     FILE *rides_data = fopen("./rides.csv","r"); 
-    fgets(buffer_rides,1000,user_data);
+    fgets(buffer_aux,1000,rides_data);
     while (fgets(buffer_aux,1000,user_data)){
-        parse_rides(buffer_aux);
+        parse_ride(buffer_aux);
     }
     free (buffer_aux);
     fclose(rides_data);
