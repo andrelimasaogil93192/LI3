@@ -15,4 +15,4 @@ struct tm get_accountCreation (User u);
 char* get_payMethod (User u);
 char* get_accountStatus (User u);
 
-#endif USER_H
+#endif 

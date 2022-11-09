@@ -5,7 +5,7 @@
 
 typedef struct ride* Ride;
 
-Ride parde_ride (char* line);
+Ride parse_ride (char* line);
 
 int get_rideID (Ride r);
 struct tm get_rideDate (Ride r);
