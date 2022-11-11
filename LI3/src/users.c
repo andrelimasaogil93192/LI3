@@ -19,7 +19,7 @@ void add_user(User u, Users us) {
 }
 
 User get_userByUsername (char* username, Users us) {
-    g_hash_table_lookup(us->users,usarneme);
+    return(g_hash_table_lookup(us->users,username));
 }
 
 

@@ -12,16 +12,17 @@
 void main(){   
 
     char *buffer_user = malloc(sizeof(char)* 10000);
-    FILE *user_data = fopen("./users.csv","r"); 
+    FILE *user_data = fopen("data/users.csv","r"); 
     fgets(buffer_user,1000,user_data);
     while (fgets(buffer_user,1000,user_data)){
-        parse_user(buffer_user);
+        User u = parse_user(buffer_user);
+        printf("%s",user_get_username(u));
     }
     free (buffer_user);
     fclose(user_data);
 
     char *buffer_driver = malloc(sizeof(char)* 10000);
-    FILE *drives_data = fopen("./drivers.csv","r"); 
+    FILE *drives_data = fopen("data/drivers.csv","r"); 
     fgets(buffer_driver,1000,drives_data);
     while (fgets(buffer_driver,1000,drives_data)){
         parse_driver(buffer_driver);
@@ -31,7 +32,7 @@ void main(){
 
     
     char *buffer_ride = malloc(sizeof(char)* 10000);
-    FILE *rides_data = fopen("./rides.csv","r"); 
+    FILE *rides_data = fopen("data/rides.csv","r"); 
     fgets(buffer_ride,1000,rides_data);
     while (fgets(buffer_ride,1000,user_data)){
         parse_ride(buffer_ride);
