@@ -1,17 +1,16 @@
 #include "users.h"
 #include <stdlib.h>
-#include "glib-2.0/glib.h"
+#include <glib.h>
 
 
 struct users {
     GHashTable *users;
-
 };
 
 Users new_users () {
-    Users u = malloc(sizeof(struct users));
-    u->users = g_hash_table_new(g_str_hash,g_str_equal);
-    return u;
+    Users us = malloc(sizeof(struct users));
+    us->users = g_hash_table_new(g_str_hash,g_str_equal);
+    return us;
 } 
 
 void add_user(User u, Users us) {

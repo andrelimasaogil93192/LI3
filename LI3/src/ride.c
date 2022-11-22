@@ -4,7 +4,7 @@
 #include <string.h>
 
 struct ride {
-    int ride_id;
+    char* ride_id;
     struct tm ride_date;
     int ride_driver_id;
     char* ride_user;
@@ -18,9 +18,10 @@ struct ride {
 
 Ride parse_ride (char* line) {
     Ride r = malloc(sizeof(struct ride));
-    r->ride_id = atoi(strsep(&line,";"));
+    r->ride_id = strdup(strsep(&line,";"));
     r->ride_date = stringToTime(strdup(strsep(&line,";")));
     r->ride_driver_id = atoi(strsep(&line,";"));
+    r->ride_user = strdup(strsep(&line,";"));
     r->city = strdup(strsep(&line,";"));
     r->ride_distance = atoi(strsep(&line,";"));
     r->score_user = atoi(strsep(&line,";"));
@@ -31,10 +32,15 @@ Ride parse_ride (char* line) {
     
 }
 
-int ride_get_id (Ride r) {
-    int aux ;
-    aux = r->ride_driver_id;
+Ride cloneRide(Ride r){
+    Ride aux;
+    aux = malloc(sizeof(struct ride));
+    memcpy(aux,r,sizeof(struct ride));
     return aux;
+}
+
+char* ride_get_Id (Ride r) {
+    return strdup(r->ride_id);
 }
 
 struct tm ride_get_date (Ride r) { 
